@@ -10,3 +10,7 @@ fi
 echo -e "\nUsing $pm for package installation\n"
 
 sudo apt-get install jetty
+
+echo -e "\nConfiguring Jetty..."
+sudo sed -i 's/^\(NO_START\s*=\s*\).*$/\10/' /etc/default/jetty
+sudo sed -i '$a\JETTY_HOST=0.0.0.0' /etc/default/jetty
