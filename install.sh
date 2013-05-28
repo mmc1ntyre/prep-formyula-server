@@ -51,7 +51,7 @@ wget --no-check-certificate -O $prepserver_path/recipes/base.sh $recipe_path/mar
 wget --no-check-certificate -O $prepserver_path/recipes/base.sh $recipe_path/jetty.sh
 echo -e "\n==> done..."
 
-cd $prep-formyula-server/recipes
+cd $root_path/src
 
 # Base installation
 echo -e "\n=> Performing Base Installation...\n"
