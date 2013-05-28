@@ -56,6 +56,9 @@ echo "==> done..."
 # Download Recipes
 echo -e "\n=> Downloading Recipes for Installation...\n"
 wget --no-check-certificate -O $prepserver_path/src/base.sh $recipe_path/base.sh
+wget --no-check-certificate -O $prepserver_path/src/java.sh $recipe_path/java.sh
+wget --no-check-certificate -O $prepserver_path/src/base.sh $recipe_path/mariadb.sh
+wget --no-check-certificate -O $prepserver_path/src/base.sh $recipe_path/jetty.sh
 echo -e "\n==> done..."
 
 cd $prep-formyula-server/src
@@ -63,6 +66,21 @@ cd $prep-formyula-server/src
 # Base installation
 echo -e "\n=> Performing Base Installation...\n"
 bash base.sh $log_file
+echo -e "\n==> done..."
+
+# Base installation
+echo -e "\n=> Java Installation...\n"
+bash java.sh $log_file
+echo -e "\n==> done..."
+
+# Base installation
+echo -e "\n=> MariaDB Installation...\n"
+bash mariadb.sh $log_file
+echo -e "\n==> done..."
+
+# Base installation
+echo -e "\n=> Jetty Installation...\n"
+bash jetty.sh $log_file
 echo -e "\n==> done..."
 
 echo -e "\n#################################"
