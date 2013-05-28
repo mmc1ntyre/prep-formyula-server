@@ -24,16 +24,6 @@ control_c()
 # trap keyboard interrupt (control-c)
 trap control_c SIGINT
 
-echo -e "\n\n"
-echo "
-echo "  _____                                .__          "
-echo "_/ ____\___________  _____ ___.__.__ __\|  \| _____   "
-echo "\\   __\/  _ \_  __ \/     <   \|  \|  \|  \  \| \__  \  "
-echo " \|  \| (  <_> )  \| \\/  Y Y  \\___  \|  \|  /  \|__/ __ \\_"
-echo " \|__\|  \\____/\|__\|  \|__\|_\|  / ____\|____/\|____(____  /"
-echo "                         \\/\\/                    \\/"
-echo -e "\n\n"
-
 #now check if user is root
 if [ $script_runner == "root" ] ; then
   echo -e "\nThis script must be run as a normal user with sudo privileges\n"
