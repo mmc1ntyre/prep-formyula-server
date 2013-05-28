@@ -45,10 +45,10 @@ echo "==> done..."
 
 # Download Recipes
 echo -e "\n=> Downloading Recipes for Installation...\n"
-wget --no-check-certificate -O $prepserver_path/src/base.sh $recipe_path/base.sh
-wget --no-check-certificate -O $prepserver_path/src/java.sh $recipe_path/java.sh
-wget --no-check-certificate -O $prepserver_path/src/base.sh $recipe_path/mariadb.sh
-wget --no-check-certificate -O $prepserver_path/src/base.sh $recipe_path/jetty.sh
+wget --no-check-certificate -O $prepserver_path/recipes/base.sh $recipe_path/base.sh
+wget --no-check-certificate -O $prepserver_path/recipes/java.sh $recipe_path/java.sh
+wget --no-check-certificate -O $prepserver_path/recipes/base.sh $recipe_path/mariadb.sh
+wget --no-check-certificate -O $prepserver_path/recipes/base.sh $recipe_path/jetty.sh
 echo -e "\n==> done..."
 
 cd $prep-formyula-server/src
