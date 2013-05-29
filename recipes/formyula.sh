@@ -15,19 +15,19 @@ read database_user
 echo "Enter default database user password [1formyula!2]"
 read database_password
 
-if [$database_name = ""];
+if [$database_name=""];
 then
-	let database_name = "formyula-default"
+	let database_name=\`formyula-default\`
 fi
 
-if [$database_user = ""];
+if [$database_user=""];
 then
-	let database_user = "formyula-db-user"
+	let database_user=\`formyula-db-user\`
 fi
 
-if [$database_password = ""];
+if [$database_password=""];
 then
-	let database_password = "1formyula!2"
+	let database_password=\`1formyula!2\`
 fi
 
 
