@@ -9,6 +9,7 @@ echo -e "\n=> Enter ROOT user database password..."
 sudo mysql -uroot -p -e "CREATE DATABASE IF NOT EXISTS \`formyula-enterprise\`;
 GRANT ALL ON *.* TO \`formyula-db-user\`@\`localhost\` IDENTIFIED BY \"1formyula!2\";
 FLUSH PRIVILEGES;
+USE \`formyula-enterprise\`;
 CREATE TABLE \`app_surveys\` (
   \`id\` int(11) unsigned NOT NULL AUTO_INCREMENT,
   \`name\` varchar(100) DEFAULT NULL,
@@ -49,5 +50,5 @@ production:
   database: formyula-enterprise
   username: formyula-db-user
   password: 1formyula!2
-EOF
+EOF 
 
