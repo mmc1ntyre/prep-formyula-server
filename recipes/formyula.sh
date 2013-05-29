@@ -16,21 +16,20 @@ read DB_USER
 echo "Enter default database user password [1formyula!2]"
 read DB_PASSWD
 
-if [$DB_NAME=""];
+if [$DB_NAME -eq ""];
 then
-	DB_NAME=\`formyula-default\`
+	DB_NAME="formyula-default"
 fi
 
-if [$DB_USER=""];
+if [$DB_USER -eq ""];
 then
-	DB_USER=\`formyula-db-user\`
+	DB_USER="formyula-db-user"
 fi
 
-if [$DB_PASSWD=""];
+if [$DB_PASSWD -eq ""];
 then
-	DB_PASSWD=\`1formyula!2\`
+	DB_PASSWD="1formyula!2"
 fi
-
 
 sudo mysql -uroot -p -e "CREATE DATABASE IF NOT EXISTS \`$DB_NAME\`;
 GRANT ALL ON *.* TO \`$DB_USER\`@\`localhost\` IDENTIFIED BY \"$DB_PASSWD\"
