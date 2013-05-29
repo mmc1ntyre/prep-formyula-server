@@ -17,17 +17,17 @@ read database_password
 
 if [$database_name = ""];
 then
-	$database_name = "formyula-default"
+	$database_name := "formyula-default"
 fi
 
 if [$database_user = ""];
 then
-	$database_user = "formyula-db-user"
+	$database_user := "formyula-db-user"
 fi
 
 if [$database_password = ""];
 then
-	$database_password = "1formyula!2"
+	$database_password := "1formyula!2"
 fi
 
 
