@@ -49,6 +49,7 @@ wget --no-check-certificate -O $root_path/src/base.sh $recipe_path/base.sh
 wget --no-check-certificate -O $root_path/src/java.sh $recipe_path/java.sh
 wget --no-check-certificate -O $root_path/src/mariadb.sh $recipe_path/mariadb.sh
 wget --no-check-certificate -O $root_path/src/jetty.sh $recipe_path/jetty.sh
+wget --no-check-certificate -O $root_path/src/formyula.sh $recipe_path/formyula.sh
 echo -e "\n==> done..."
 
 cd $root_path/src
