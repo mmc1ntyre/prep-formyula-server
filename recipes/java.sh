@@ -11,7 +11,7 @@ echo -e "\nUsing $pm for package installation\n"
 
 # Install Java 7
 echo -e "\n=> Installing Open JDK 7..."
-sudo apt-get install openjdk-7-jdk
+sudo apt-get install openjdk-7-jdk --force-yes
 echo "==> done..."
 
 
