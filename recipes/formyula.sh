@@ -31,9 +31,10 @@ then
 	DB_PASSWD="1formyula!2"
 fi
 
+echo "Enter ROOT db password ..."
 sudo mysql -uroot -p -e "CREATE DATABASE IF NOT EXISTS \`$DB_NAME\`;
 GRANT ALL ON *.* TO \`$DB_USER\`@\`localhost\` IDENTIFIED BY \"$DB_PASSWD\"
-USE \`$DB_NAME\`;
+USE DATABASE \`$DB_NAME\`;
 CREATE TABLE \`app_surveys\` (
   \`id\` int(11) unsigned NOT NULL AUTO_INCREMENT,
   \`name\` varchar(100) DEFAULT NULL,
