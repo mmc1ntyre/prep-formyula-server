@@ -6,10 +6,34 @@ echo -e "\n=> Installing Formyula Configuration File..."
 # Install DB & Formyula Configuration
 echo -e "\n=> Enter ROOT user database password..."
 
-sudo mysql -uroot -p -e "CREATE DATABASE IF NOT EXISTS \`formyula-enterprise\`;
-GRANT ALL ON *.* TO \`formyula-db-user\`@\`localhost\` IDENTIFIED BY \"1formyula!2\";
-FLUSH PRIVILEGES;
-USE \`formyula-enterprise\`;
+echo "Enter default database name [formyula-default]:"
+read database_name
+
+echo "Enter default database user [formyula-db-user]"
+read database_user
+
+echo "Enter default database user password [1formyula!2]"
+read database_password
+
+if [$database_name = ""];
+then
+	$database_name = "formyula-default"
+fi
+
+if [$database_user = ""];
+then
+	$database_user = "formyula-db-user"
+fi
+
+if [$database_password = ""];
+then
+	$database_password = "1formyula!2"
+fi
+
+
+sudo mysql -uroot -p -e "CREATE DATABASE IF NOT EXISTS \`$database_name\`;
+GRANT ALL ON *.* TO \`$database_user\`@\`localhost\` IDENTIFIED BY \"$databse_password\"
+USE \`$database_name\`;
 CREATE TABLE \`app_surveys\` (
   \`id\` int(11) unsigned NOT NULL AUTO_INCREMENT,
   \`name\` varchar(100) DEFAULT NULL,
@@ -47,8 +71,8 @@ sudo touch /etc/formyula.yml && sudo sh -c "cat > /etc/formyula.yml" << EOF
 production:
   adapter: jdbcmysql
   encoding: utf8
-  database: formyula-enterprise
-  username: formyula-db-user
-  password: 1formyula!2
+  database: $database_name
+  username: $database_user
+  password: $database_password
 EOF 
 
