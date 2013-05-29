@@ -12,5 +12,11 @@ echo -e "\nUsing $pm for package installation\n"
 sudo apt-get install jetty --force-yes
 
 echo -e "\nConfiguring Jetty..."
-sudo sed -i 's/^\(NO_START\s*=\s*\).*$/\10/' /etc/default/jetty
-sudo sed -i '$a\JETTY_HOST=0.0.0.0' /etc/default/jetty
+
+sudo sh -c "cat > /etc/default/jetty" << EOF
+JAVA_HOME=/usr/java/default # Path to Java
+NO_START=0 # Start on boot
+JETTY_HOST=0.0.0.0 # Listen to all hosts
+JETTY_PORT=8085 # Run on this port
+JETTY_USER=jetty # Run as this user
+EOF

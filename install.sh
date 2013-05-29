@@ -83,4 +83,6 @@ echo -e "\n#################################"
 echo    "### Installation is complete! ###"
 echo -e "#################################\n"
 
+echo -e "\n********** S T A R T I N G   W E B S E R V E R **********"
+sudo service jetty start
 
