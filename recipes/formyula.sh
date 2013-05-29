@@ -1,3 +1,4 @@
+#!/bin/bash
 log_file=$1
 
 # Install Java 7
