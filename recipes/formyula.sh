@@ -3,9 +3,9 @@ log_file=$1
 # Install Java 7
 echo -e "\n=> Installing Formyula Configuration File..."
 
-sudo touch /etc/formyula.yml && cat /etc/formyula.yml << EOF
+sudo touch /etc/formyula.yml && sudo cat /etc/formyula.yml << EOF
 production:
-  adapter: jdbcmysl
+  adapter: jdbcmysql
   encoding: utf8
   database: your-database-name
   username: your-database-username
