@@ -22,12 +22,12 @@ fi
 
 if [$database_user = ""];
 then
-	let $database_user = "formyula-db-user"
+	let database_user = "formyula-db-user"
 fi
 
 if [$database_password = ""];
 then
-	let $database_password = "1formyula!2"
+	let database_password = "1formyula!2"
 fi
 
 
