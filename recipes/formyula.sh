@@ -7,33 +7,33 @@ echo -e "\n=> Installing Formyula Configuration File..."
 echo -e "\n=> Enter ROOT user database password..."
 
 echo "Enter default database name [formyula-default]:"
-read database_name
+read DB_NAME
 
 echo "Enter default database user [formyula-db-user]"
-read database_user
+read DB_USER
 
 echo "Enter default database user password [1formyula!2]"
-read database_password
+read DB_PASSWD
 
-if [$database_name=""];
+if [$DB_NAME=""];
 then
-	let database_name=\`formyula-default\`
+	DB_NAME=\`formyula-default\`
 fi
 
-if [$database_user=""];
+if [$DB_USER=""];
 then
-	let database_user=\`formyula-db-user\`
+	DB_USER=\`formyula-db-user\`
 fi
 
-if [$database_password=""];
+if [$DB_PASSWD=""];
 then
-	let database_password=\`1formyula!2\`
+	DB_PASSWD=\`1formyula!2\`
 fi
 
 
-sudo mysql -uroot -p -e "CREATE DATABASE IF NOT EXISTS \`$database_name\`;
-GRANT ALL ON *.* TO \`$database_user\`@\`localhost\` IDENTIFIED BY \"$databse_password\"
-USE \`$database_name\`;
+sudo mysql -uroot -p -e "CREATE DATABASE IF NOT EXISTS \`$DB_NAME\`;
+GRANT ALL ON *.* TO \`$DB_USER\`@\`localhost\` IDENTIFIED BY \"$DB_PASSWD\"
+USE \`$DB_NAME\`;
 CREATE TABLE \`app_surveys\` (
   \`id\` int(11) unsigned NOT NULL AUTO_INCREMENT,
   \`name\` varchar(100) DEFAULT NULL,
@@ -71,8 +71,8 @@ sudo touch /etc/formyula.yml && sudo sh -c "cat > /etc/formyula.yml" << EOF
 production:
   adapter: jdbcmysql
   encoding: utf8
-  database: $database_name
-  username: $database_user
-  password: $database_password
+  database: $DB_NAME
+  username: $DB_USER
+  password: $DB_PASSWD
 EOF 
 
