@@ -75,7 +75,7 @@ bash jetty.sh $log_file
 echo -e "\n==> done..."
 
 # Formyula config file installation
-echo -e "\n=> Jetty Installation...\n"
+echo -e "\n=> Formyula Config File Installation...\n"
 bash formyula.sh $log_file
 echo -e "\n==> done..."
 
