@@ -17,12 +17,12 @@ read database_password
 
 if [$database_name = ""];
 then
-	let database_name := "formyula-default"
+	let database_name = "formyula-default"
 fi
 
 if [$database_user = ""];
 then
-	let $database_user := "formyula-db-user"
+	let $database_user = "formyula-db-user"
 fi
 
 if [$database_password = ""];
