@@ -17,6 +17,21 @@ read DB_PASSWD
 echo "Enter default FORMYULA_DATA_TOKEN [3formyula!4]"
 read WS_TOKEN
 
+echo "\n*****************************"
+echo "\n** AMAZON S3 Configuration **"
+echo "\n*****************************"
+echo "\n"
+echo "Please Note: The information you are entering must match the information you provide the Formyula team."
+echo "\n"
+echo "Enter your Amazon S3 : ACCESS KEY [blank]"
+read ACCESS_KEY
+
+echo "Enter your Amazon S3 : SECRET KEY [blank]"
+read SECRET_KEY
+
+echo "Enter your Amazon S3 : BUCKET [blank]"
+read BUCKET
+
 if [$DB_NAME -eq ""];
 then
 	DB_NAME="formyula-default"
@@ -52,5 +67,8 @@ production:
   username: $DB_USER
   password: $DB_PASSWD
   data_token: $WS_TOKEN
+  s3_access_key: $ACCESS_KEY
+  s3_secret_key: $SECRET_KEY
+  s3_bucket: $BUCKET
 EOF
 
