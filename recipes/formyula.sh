@@ -14,6 +14,9 @@ read DB_USER
 echo "Enter default database user password [1formyula!2]"
 read DB_PASSWD
 
+echo "Enter default FORMYULA_DATA_TOKEN [3formyula!4]"
+read WS_TOKEN
+
 if [$DB_NAME -eq ""];
 then
 	DB_NAME="formyula-default"
@@ -27,6 +30,11 @@ fi
 if [$DB_PASSWD -eq ""];
 then
 	DB_PASSWD="1formyula!2"
+fi
+
+if [$WS_TOKEN -eq ""];
+then
+	WS_TOKEN="3formyula!4"
 fi
 
 echo "Enter Maria-DB User password ..."
@@ -43,5 +51,6 @@ production:
   database: $DB_NAME
   username: $DB_USER
   password: $DB_PASSWD
+  data_token: $WS_TOKEN
 EOF
 
